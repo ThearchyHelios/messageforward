@@ -53,29 +53,29 @@ while True:
     if message_count_present != len(merge_leve_1):
         message_count_present = len(merge_leve_1)
 
-        # if merge_leve_1.is_sent[message_count_present - 1] == 0:
-        print('User ' + str(merge_leve_1.phone_number[message_count_present - 1]) + ' use ' + str(
-            merge_leve_1.service[message_count_present - 1]) + ' text you: \n' + str(
-            merge_leve_1.text[message_count_present - 1]) + '\n----------------')
+        if merge_leve_1.is_sent[message_count_present - 1] == 0:
+            print('User ' + str(merge_leve_1.phone_number[message_count_present - 1]) + ' use ' + str(
+                merge_leve_1.service[message_count_present - 1]) + ' text you: \n' + str(
+                merge_leve_1.text[message_count_present - 1]) + '\n----------------')
 
-        message_email = MIMEText(
-            'User ' + str(merge_leve_1.phone_number[message_count_present - 1]) + ' use ' + str(
-            merge_leve_1.service[message_count_present - 1]) + ' text you: \n' + str(
-            merge_leve_1.text[message_count_present - 1]) + '\n----------------')
-        receiver = 'jiangyilun2000@gmail.com'
-        message_email['From'] = Header("JIANGBOT", 'utf-8')
-        message_email['To'] = Header("JIANG Yilun", 'utf-8')
-        subject_email = 'User ' + str(merge_leve_1.phone_number[message_count_present - 1]) + ' text you!'
-        message_email['Subject'] = Header(subject_email, 'utf-8')
-        try:
-            smtpObj = smtplib.SMTP_SSL(mail_host, 465)
-            smtpObj.ehlo()
-            smtpObj.login(mail_user, mail_pass)
-            smtpObj.sendmail(sender, receiver, message_email.as_string())
-            print("邮件发送成功")
+            message_email = MIMEText(
+                'User ' + str(merge_leve_1.phone_number[message_count_present - 1]) + ' use ' + str(
+                merge_leve_1.service[message_count_present - 1]) + ' text you: \n' + str(
+                merge_leve_1.text[message_count_present - 1]) + '\n----------------')
+            receiver = 'jiangyilun2000@gmail.com'
+            message_email['From'] = Header("JIANGBOT", 'utf-8')
+            message_email['To'] = Header("JIANG Yilun", 'utf-8')
+            subject_email = 'User ' + str(merge_leve_1.phone_number[message_count_present - 1]) + ' text you!'
+            message_email['Subject'] = Header(subject_email, 'utf-8')
+            try:
+                smtpObj = smtplib.SMTP_SSL(mail_host, 465)
+                smtpObj.ehlo()
+                smtpObj.login(mail_user, mail_pass)
+                smtpObj.sendmail(sender, receiver, message_email.as_string())
+                print("邮件发送成功")
 
-        except smtplib.SMTPException as e:
-            print("无法发送邮件", e)
+            except smtplib.SMTPException as e:
+                print("无法发送邮件", e)
 
     # for value in range(len(merge_leve_1)):
     #     if merge_leve_1.is_sent[value] == 1:
