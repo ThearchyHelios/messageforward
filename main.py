@@ -83,3 +83,5 @@ while True:
     #     else:
     #         print('User ' + str(merge_leve_1.phone_number[value]) + ' use ' + str(
     #             merge_leve_1.service[value]) + ' text you: \n' + str(merge_leve_1.text[value]) + '\n----------------')
+
+    time.sleep(1)
