@@ -8,11 +8,11 @@ from email.mime.text import MIMEText
 message_count_present = 0
 while True:
     # mail config
-    sender = "jiangyilun2000@gmail.com"
+    sender = "exemple@gmail.com"
 
     mail_host = "smtp.gmail.com"  # 设置服务器
-    mail_user = "jiangyilun2000@gmail.com"  # 用户名
-    mail_pass = "iqghngbrbjrphycl"  # 口令
+    mail_user = "ecemple@gmail.com"  # 用户名
+    mail_pass = "exemple"  # 口令
 
     # substitute username with your username
     conn = sqlite3.connect('/Users/yilunjiang/Library/Messages/chat.db')
